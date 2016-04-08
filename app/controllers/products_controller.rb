@@ -10,7 +10,6 @@ class ProductsController < ApplicationController
 
 	def create
 		@product = Product.new(name: product_params[:name],period: product_params[:period],conditions: product_params[:conditions], count: product_params[:count], user_id: current_user.id, start: product_params[:start], interval: product_params[:interval], finish: finish_day)
-		binding.pry
 
 		if @product.save
 			redirect_to('/products')
@@ -49,6 +48,7 @@ class ProductsController < ApplicationController
 
 	def finish_day
 		t = Chronic.parse(params[:start])
+		if t then
 			if params[:period] == "30"
 				return 1.months.from_now(t)
 			elsif params[:period] == "60"
@@ -56,6 +56,7 @@ class ProductsController < ApplicationController
 			else
 				return 3.months.from_now(t)
 			end
+		end
 	end
 
 

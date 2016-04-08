@@ -1,0 +1,83 @@
+<tbody>
+  <% test = ((product.count.to_f / (product.period.to_f / product.interval.to_f)) * 100).round(0) %>
+  <% if test >= 100 || DateTime.now > product.finish %>
+  <!-- 定着率が100%以上、あるいは今日の日付が定着期間終了日以降の場合 -->
+    <tr class="danger" data-href="/products/<%= product.id %>">
+      <td>
+        <div class="row">
+          <div class="col-xs-offset-1 col-xs-10 col-lg-10">
+            <p><%= product.name %></p>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class="row">
+          <div class="col-xs-offset-1 col-xs-10 col-lg-10">
+            <p><%= "#{product.start}" + "〜" + "#{product.finish.to_s}" %></p>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class="row">
+          <% if product.interval == "1" then %>
+            <div class="col-xs-offset-1 col-xs-10 col-lg-10">
+              <p>毎日</p>
+            </div>
+          <% else %>
+            <div class="col-xs-offset-1 col-xs-10 col-lg10">
+              <p><%= product.interval  + "日置き" %></p>
+            </div>
+          <% end %>
+        </div>
+      </td>
+      <td>
+        <div class="row">
+          <div class="col-xs-offset-1 col-xs-10 col-lg-10">
+            <p><%= test.to_s + "%" %></p>
+          </div>
+        </div>
+      </td>
+      <!-- </a> なにこれ？ -->
+     </tr>
+  <% else %>
+  <!-- 定着率が100%以上、あるいは今日の日付が定着期間終了日以降の場合(進行中) -->
+    <tr class="active" data-href="/products/<%= product.id %>">
+        <td>
+          <div class="row">
+            <div class="col-xs-offset-1 col-xs-10 col-lg-10">
+              <p><%= product.name %></p>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="row">
+            <div class="col-xs-offset-1 col-xs-10 col-lg-10">
+              <p><%= "#{product.start}" + "〜" + "#{product.finish.to_s}" %></p>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="row">
+            <% if product.interval == "1" then %>
+              <div class="col-xs-offset-1 col-xs-10 col-lg-10">
+                <p>毎日</p>
+              </div>
+            <% else %>
+              <div class="col-xs-offset-1 col-xs-10 col-lg10">
+                <p><%= product.interval  + "日置き" %></p>
+              </div>
+            <% end %>
+          </div>
+        </td>
+        <td>
+          <div class="row">
+            <div class="col-xs-offset-1 col-xs-10 col-lg-10">
+              <p><%= test.to_s + "%" %></p>
+            </div>
+          </div>
+        </td>
+      </a>
+    </tr>
+  <% end %>
+</tbody>
+

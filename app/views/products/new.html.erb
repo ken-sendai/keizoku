@@ -1,0 +1,55 @@
+<% if @product.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @product.errors.count %>件のエラーがあります。</h2>
+
+    <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="form">
+  <%= form_tag('/products', method: :post) do %>
+    <h3>タスク登録</h3>
+    <div class="form-group">
+      <label class="control-label" for="task-name">タスク名</label>
+      <input class="form-control" id="task-name" placeholder="タスク名" type="text" name="name">
+    </div>
+    <div class="from-group">
+      <label class="control-label" for="start-day">スタート日</label>
+      <input class="form-control datepicker" type="text" id="start-day" name="start">
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="period">定着期間</label>
+      <select class="form-control" id="period" name="period">
+        <option value="30">１ヶ月</option>
+        <option value="60">２ヶ月</option>
+        <option value="90">３ヶ月</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="interval">インターバル</label>
+      <select class="form-control" id="interval" name="interval">
+        <option value="1">毎日</option>
+        <option value="2">1日置き</option>
+        <option value="3">2日置き</option>
+        <option value="4">3日置き</option>
+        <option value="5">4日置き</option>
+        <option value="6">5日置き</option>
+        <option value="7">6日置き</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="conditions">達成条件</label>
+      <input class="form-control" id="conditions" placeholder="時間、場所、行動内容、etc..." tyoe="text" name="conditions">
+    </div>
+    <div class="form-group">
+      <input type="hidden" name="count" value=0>
+    </div>
+    <div class="form-group">
+      <input type="submit" class="btn btn-info" value="登録">
+    </div>
+  <% end %>
+</div>

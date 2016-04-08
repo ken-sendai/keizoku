@@ -1,0 +1,27 @@
+<div class="text-center">
+  <h1>KEIZOKU</h1><br>
+</div>
+
+<div class="row">
+  <div class="col-xs-2">
+    <%= form_tag "/products/new", method: :get do %>
+      <button type="submit" class="btn btn-info" value="新規登録">新規登録</button>
+    <% end %>
+  </div>
+</div>
+
+<div class="tasks">
+  <div class="task">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>タスク</th>
+          <th>期間</th>
+          <th>インターバル</th>
+          <th>定着率</th>
+        </tr>
+      </thead>
+      <%= render :partial => "product", :collection => @products %>
+    </table>
+  </div>
+</div>

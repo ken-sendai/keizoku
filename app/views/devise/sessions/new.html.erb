@@ -1,0 +1,40 @@
+<div class="text-center">
+  <div class="title_name">
+    <h3>シンプルな習慣化支援ツール</h3>
+    <h1>KEIZOKU</h1><br>
+  </div>
+  <h3>ログイン</h3>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <%= f.label :email %><br />
+      <div class="row">
+        <div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-offset-3 col-xs-6">
+          <%= f.email_field :email, autofocus: true, class: "input form-control" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %><br />
+      <div class="row">
+        <div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-offset-3 col-xs-6">
+          <%= f.password_field :password, autocomplete: "off", class: "input form-control" %>
+        </div>
+      </div>
+    </div>
+
+    <% if devise_mapping.rememberable? -%>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :アカウント情報を記憶 %>
+      </div>
+    <% end -%>
+
+    <div class="actions">
+      <%= f.submit "ログイン", class: "btn btn-info"%>
+    </div>
+  <% end %><br>
+
+  <%= render "devise/shared/links" %>
+</div>

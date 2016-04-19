@@ -24,7 +24,13 @@
           <li><a href="#">Link</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Link</a></li>
+          <% if user_signed_in? %>
+            <li><%= link_to "プロフィール変更", edit_user_registration_path %></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "サインアップ", new_user_registration_path %></li>
+            <li><%= link_to "ログイン", new_user_session_path %></li>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -33,6 +39,9 @@
 </head>
 <body>
 <div class="text-center">
+<!--フラッシュメッセージが２重で表示されるため、一旦非表示にしておく -->
+<!-- <p class="notice"><%= notice %></p> -->
+<p class="alert"><%= alert %></p>
 
   <%= yield %>
 

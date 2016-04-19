@@ -1,0 +1,62 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+en:
+  devise:
+    confirmations:
+      confirmed: "このメールアドレスはすでに登録されています。"
+      send_instructions: "数分以内にメールアドレスを登録する方法をメールであなた宛てに送信します。"
+      send_paranoid_instructions: "あなたのメールアドレスがすでに登録されている場合、数分以内にメールアドレスを登録する方法をメールであなた宛てに送信します。"
+    failure:
+      already_authenticated: "すでにログイン済みです。"
+      inactive: "このアカウントは有効ではありません。"
+      invalid: "%{authentication_keys}もしくはパスワードが無効です。"
+      locked: "このアカウントはロックされています。"
+      last_attempt: "今回失敗するとアカウントがロックされます。"
+      not_found_in_database: "%{authentication_keys}もしくはパスワードが無効です。"
+      timeout: "ログインが無効です。再度ログインし直してください。"
+      unauthenticated: "続けるにはアカウントを新規登録するか、ログインする必要があります。"
+      unconfirmed: "続けるにはメールアドレスを認証する必要があります。"
+    mailer:
+      confirmation_instructions:
+        subject: "認証方法"
+      reset_password_instructions:
+        subject: "パスワードをリセット"
+      unlock_instructions:
+        subject: "ロックを解除"
+      password_change:
+        subject: "パスワード変更"
+    omniauth_callbacks:
+      failure: "次の理由で%{kind}を認証できませんでした\"%{reason}\"。"
+      success: "%{kind}アカウントの認証に成功しました。"
+    passwords:
+      no_token: "パスワードのリセット確認メールからアクセスする必要があります。もし確認メールからアクセスしている場合は、提供されたURLをもう一度確認してください。"
+      send_instructions: "数分以内にパスワードをリセットする方法をメールであなた宛てに送信します。"
+      send_paranoid_instructions: "メールアドレスがすでに登録されている場合、数分以内に新しいパスワードをメールで送信します。"
+      updated: "パスワードが変更されています。すでにログイン済みです。"
+      updated_not_active: "パスワードが変更されています。"
+    registrations:
+      destroyed: "今までご利用ありがとうございました!アカウントが削除されました。またのご利用をお待ちしております。"
+      signed_up: "ようこそ! アカウント登録が完了しました。"
+      signed_up_but_inactive: "アカウントが登録済みです。しかし、このアカウントは有効ではありません。"
+      signed_up_but_locked: "アカウントが登録済みです。しかし、このアカウントはロックされています。"
+      signed_up_but_unconfirmed: "アカウント認証のリンクを記載したメールを送信しました。リンク先の指示に従い、アカウントを認証してください。"
+      update_needs_confirmation: "アカウント情報が変更されました。続けて新しいメールアドレスを認証する必要があります。新しいメールアドレス宛てに送信したメールに記載されたリンクの指示に従い、メールアドレスの認証を完了してください。"
+      updated: "アカウント情報が変更されました。"
+    sessions:
+      signed_in: "ログインしました。"
+      signed_out: "ログアウトしました。"
+      already_signed_out: "ログアウトしました。"
+    unlocks:
+      send_instructions: "数分以内にアカウントをロックする方法をメールであなた宛てに送信します。"
+      send_paranoid_instructions: "アカウントが既に登録されている場合、数分以内にアカウントをロックする方法をメールであなた宛てに送信します。"
+      unlocked: "アカウントロックは解除されています。続けるにはログインしてください。"
+  errors:
+    messages:
+      already_confirmed: "はすでに登録されています。ログインしてください。"
+      confirmation_period_expired: "needs to be confirmed within %{period}までに登録する必要があります。新規登録してください。"
+      expired: "は終了しました。新規登録してください。"
+      not_found: "見つかりませんでした。"
+      not_locked: "ロックされていません。"
+      not_saved:
+        one: "1件のエラーにより%{resource}を保存できませんでした。:"
+        other: "%{count}件のエラーにより%{resource}を保存できませんでした。:"

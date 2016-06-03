@@ -4,7 +4,11 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
+<<<<<<< HEAD
 gem 'pg', '~> 0.15'
+=======
+gem 'pg'
+>>>>>>> ac66dd36a2730c9829d960ddcef508e076f6603f
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -45,6 +49,7 @@ group :development do
   gem 'spring'
 end
 
+<<<<<<< HEAD
 group :production, :staging do
   gem 'rails_12factor'
 end
@@ -54,5 +59,11 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'jc-validates_timeliness'
 gem 'jquery-ui-rails'
+=======
+gem 'pry-rails'
+gem 'devise'
+gem 'jquery-ui-rails'
+gem 'jc-validates_timeliness'
+>>>>>>> ac66dd36a2730c9829d960ddcef508e076f6603f
 gem 'chronic'
 

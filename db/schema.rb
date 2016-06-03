@@ -11,13 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160404054047) do
+=======
+ActiveRecord::Schema.define(version: 20160418230901) do
+>>>>>>> ac66dd36a2730c9829d960ddcef508e076f6603f
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "products", force: :cascade do |t|
     t.text     "name"
+<<<<<<< HEAD
     t.text     "conditions"
     t.integer  "count"
     t.datetime "created_at"
@@ -27,6 +32,17 @@ ActiveRecord::Schema.define(version: 20160404054047) do
     t.text     "start"
     t.text     "period"
     t.text     "interval"
+=======
+    t.text     "start"
+    t.date     "finish"
+    t.text     "period"
+    t.text     "condition"
+    t.integer  "user_id"
+    t.integer  "count"
+    t.integer  "interval"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+>>>>>>> ac66dd36a2730c9829d960ddcef508e076f6603f
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,8 +56,13 @@ ActiveRecord::Schema.define(version: 20160404054047) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+<<<<<<< HEAD
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+=======
+    t.datetime "created_at"
+    t.datetime "updated_at"
+>>>>>>> ac66dd36a2730c9829d960ddcef508e076f6603f
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

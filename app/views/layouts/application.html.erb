@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
 	<title>Keizoku</title>
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -50,5 +51,52 @@
 		<%= yield %>
 
 	</div>
+=======
+  <title>Keizoku3</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <!-- navber -->
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">KEIZOKU</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Link</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+            <li><%= link_to "プロフィール変更", edit_user_registration_path %></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "サインアップ", new_user_registration_path %></li>
+            <li><%= link_to "ログイン", new_user_session_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</head>
+<body>
+<div class="text-center">
+<!--フラッシュメッセージが２重で表示されるため、一旦非表示にしておく -->
+<!-- <p class="notice"><%= notice %></p> -->
+<p class="alert"><%= alert %></p>
+
+  <%= yield %>
+
+</div>
+>>>>>>> ac66dd36a2730c9829d960ddcef508e076f6603f
 </body>
 </html>

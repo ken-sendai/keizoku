@@ -6,9 +6,9 @@
 
 * Ruby version 2.1.3
 
-* [heroku]: http://keizoku.herokuapp.com "heroku"
+* [heroku](http://keizoku.herokuapp.com "heroku")
 
 ### image
 
-![スクリーンショット]()
+![スクリーンショット](keizoku/スクリーンショット.png)
 
